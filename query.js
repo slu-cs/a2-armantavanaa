@@ -9,7 +9,7 @@ connect(); // To the database
 const queries = [
   Voters_info.find()
 
-  Voters_info.find().where('zipcode').equals(13617)
+  Voters_info.find().where('zipcode').equals('13617')
 ];
 
 
