@@ -9,11 +9,11 @@ const connect = require('./db');
 const Voters_info = require('./schema');
 
 connect(); // To the database
-const res = [];
+
 const result = [];
 file.on('line', function(line) {
   const columns = line.split(',');
-  res = result.push(
+  result.push(
     new Voters_info ({
     first_n: columns[0],
     last_n: columns[1],
@@ -23,7 +23,7 @@ file.on('line', function(line) {
 });
 
 mongoose.connection.dropDatabase()
-  .then(result => res.save())
+  .then(()=> Promise.all(result.map(x=>x.save())))
   .then(() => mongoose.connection.close())
   .then(result => console.log("Ready"))
   .catch(error => console.error(error.stack));
