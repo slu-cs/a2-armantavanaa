@@ -9,11 +9,11 @@ const connect = require('./db');
 const Voters_info = require('./schema');
 
 connect(); // To the database
-
+const res = [];
 const result = [];
 file.on('line', function(line) {
   const columns = line.split(',');
-  const res = result.push(
+  res = result.push(
     new Voters_info ({
     first_n: columns[0],
     last_n: columns[1],
