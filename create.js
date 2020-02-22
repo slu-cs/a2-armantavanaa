@@ -18,7 +18,7 @@ file.on('line', function(line) {
     first_n: columns[0],
     last_n: columns[1],
     zipcode: Number(columns[2]),
-    history: columns[3]})
+    history: columns[3]});
   )
 });
 
