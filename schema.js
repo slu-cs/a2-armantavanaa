@@ -17,4 +17,4 @@ Voters_info.index({zipcode:1});
 Voters_info.index({history:1});
 
 //compile and export this schema
-module.exports = mongoose.model('Voter', Voters);
+module.exports = mongoose.model('Voter', Voters_info);
