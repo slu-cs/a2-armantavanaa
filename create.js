@@ -23,7 +23,7 @@ file.on('line', function(line) {
 });
 
 mongoose.connection.dropDatabase()
-  .then(result => Voters_info.save())
+  .then(result => results.save())
   .then(() => mongoose.connection.close())
   .then(result => console.log("Ready"))
   .catch(error => console.error(error.stack));
