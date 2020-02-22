@@ -17,7 +17,7 @@ file.on('line', function(line) {
     new Voters_info ({
     first_n: columns[0],
     last_n: columns[1],
-    zipcode: Number(columns[2]),
+    zipcode: columns[2],
     history: columns[3]})
   )
 });
