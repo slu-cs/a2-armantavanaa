@@ -22,8 +22,15 @@ file.on('line', function(line) {
   )
 });
 
+const harcourt = new Professor({
+  name: 'Ed Harcourt',
+  rank: 'Full',
+  started: 2003,
+  courses: [140, 220, 345, 362, 364]
+});
+
 mongoose.connection.dropDatabase()
-  .then(result => results.save())
+  .then(result => harcourt.save())
   .then(() => mongoose.connection.close())
   .then(result => console.log("Ready"))
   .catch(error => console.error(error.stack));
