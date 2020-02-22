@@ -23,7 +23,8 @@ file.on('line', function(line) {
 });
 
 mongoose.connection.dropDatabase()
-  .then(result => result.pop().save())
+  result.save(function(error) {
+    if (error) console.error(error.stack);
   .then(() => mongoose.connection.close())
   .then(result => console.log("Ready"))
   .catch(error => console.error(error.stack));
