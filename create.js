@@ -1,12 +1,11 @@
 const fs = require('fs');
 const readline = require('readline');
-const file = readline.createInterface({
-  input: fs.createReadStream('voters.csv')
-});
-
 const mongoose = require('mongoose');
 const connect = require('./db');
 const Voters_info = require('./schema');
+const file = readline.createInterface({
+  input: fs.createReadStream('voters.csv')
+});
 
 connect(); // To the database
 
@@ -18,7 +17,7 @@ file.on('line', function(line) {
     first_n: columns[0],
     last_n: columns[1],
     zipcode: columns[2],
-    history: columns[3]})
+    history: columns.slice(3)})
   )
 });
 
