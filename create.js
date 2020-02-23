@@ -22,7 +22,7 @@ file.on('line', function(line) {
   )
 });
 
-file.on('close', function(){
+file.on('close', function(line){
   mongoose.connection.dropDatabase()
     .then(()=> Promise.all(result.map(x=>x.save())))
     .then(() => mongoose.connection.close())
