@@ -20,7 +20,7 @@ Promise.all(queries)
   .then(function(results) {
     console.log('voters in canton: ', results[0]);
     console.log('What are the full names of all the registered voters whose first-name is STARR? ', results[1]);
-    console.log('How many people voted in the 2016 general election (GE16)? ', results[2]);
+    console.log('How many people voted in the 2016 general election (GE16)? ', results[2].map(x=> x.first_n + x.last_n));
     console.log('What is the last-name that comes last in the county in alphabetical order? ', results[3]);
     console.log('How many zip codes does the county contain? ', results[4].length);
 
