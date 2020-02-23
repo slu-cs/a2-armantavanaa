@@ -8,7 +8,7 @@ connect(); // To the database
 
 const queries = [
 
-  Voters_info.find().where('zipcode').equals('13617').countDocuments()
+  Voters_info.count()
 ];
 
 
