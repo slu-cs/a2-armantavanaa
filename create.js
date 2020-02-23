@@ -22,8 +22,10 @@ file.on('line', function(line) {
   )
 });
 
-mongoose.connection.dropDatabase()
-  .then(()=> Promise.all(result.map(x=>x.save())))
-  .then(() => mongoose.connection.close())
-  .then(result => console.log("Ready"))
-  .catch(error => console.error(error.stack));
+file.on('close', function(){
+  mongoose.connection.dropDatabase()
+    .then(()=> Promise.all(result.map(x=>x.save())))
+    .then(() => mongoose.connection.close())
+    .then(result => console.log("Ready"))
+    .catch(error => console.error(error.stack));
+  });
