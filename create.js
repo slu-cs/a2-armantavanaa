@@ -7,8 +7,7 @@ const mongoose = require('mongoose');
 const connect = require('./db');
 const Voters_info = require('./schema');
 
-
-connect(); // To the database
+connect();
 
 const result = [];
 file.on('line', function(line) {

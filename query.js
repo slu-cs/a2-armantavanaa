@@ -18,6 +18,7 @@ const queries = [
 
 Promise.all(queries)
   .then(function(results) {
+    
     console.log('voters in canton: ', results[0]);
     console.log('What are the full names of all the registered voters whose first-name is STARR? ', results[1].map(x=> x.first_n + " " + x.last_n));
     console.log('How many people voted in the 2016 general election (GE16)? ', results[2]);
