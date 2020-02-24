@@ -8,7 +8,7 @@ const queries = [
 
   Voters_info.find().where('zipcode').equals('13617').countDocuments(),
   Voters_info.find().where('first_n').equals('STARR'),
-  Voters_info.find().where({'history':{$regex:/GE16/}}).countDocuments(),
+  Voters_info.find({'history':{$regex:/GE16/}}).countDocuments(),
   Voters_info.find().sort('-n_last').limit(1),
   Voters_info.distinct('zipcode')
 
